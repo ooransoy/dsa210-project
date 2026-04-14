@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="BdX9XFYC6flsSG4X2quJihRGWj06Badu40pQivH8">
+    <title>Jstris | Leaderboard</title>
+    <link media="all" rel="stylesheet" href="ultra1_files/main.css">
+    <link rel="shortcut icon" href="https://jstris.jezevec10.com/res/favicon.ico" type="image/vnd.microsoft.icon" id="favicon">
+    <meta name="description" content="Jstris leaderboards">
+    <script async="" src="ultra1_files/google-analytics_analytics.js"></script><script>window.Laravel = {"csrfToken":"BdX9XFYC6flsSG4X2quJihRGWj06Badu40pQivH8"}</script>
+    <script defer="defer" src="ultra1_files/app.js"></script>
+<link rel="preconnect" href="https://s.jezevec10.com/" crossorigin="">
+<script async="" src="ultra1_files/ga.js"></script>
+        </head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://jstris.jezevec10.com/">
+                        Jstris
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <ul class="nav navbar-nav" id="mnav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Play <span class="caret"></span></a>
+                            <ul class="dropdown-menu plLinks" role="menu">
+                                <li><a href="https://jstris.jezevec10.com/">Live</a></li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="https://jstris.jezevec10.com/play/sprint" id="plH">Sprint</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a id="pl2" href="https://jstris.jezevec10.com/play/sprint/20">20L</a></li>
+                                        <li><a id="pl3" href="https://jstris.jezevec10.com/play/sprint/40">40L</a></li>
+                                        <li><a id="pl4" href="https://jstris.jezevec10.com/play/sprint/100">100L</a></li>
+                                        <li><a id="pl5" href="https://jstris.jezevec10.com/play/sprint/1000">1000L</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="https://jstris.jezevec10.com/play/cheeseRace" id="plI">Cheese race</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a id="pl6" href="https://jstris.jezevec10.com/play/cheeseRace/10">10L</a></li>
+                                        <li><a id="pl7" href="https://jstris.jezevec10.com/play/cheeseRace/18">18L</a></li>
+                                        <li><a id="pl8" href="https://jstris.jezevec10.com/play/cheeseRace/100">100L</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="https://jstris.jezevec10.com/maps">Map downstack</a></li>
+                                <li><a id="pl9" href="https://jstris.jezevec10.com/play/survival">Survival</a></li>
+                                <li><a id="plA" href="https://jstris.jezevec10.com/play/ultra">Ultra</a></li>
+                                <li><a id="plB" href="https://jstris.jezevec10.com/play/20TSD">20TSD</a></li>
+                                <li><a id="plC" href="https://jstris.jezevec10.com/play/PC">PC Mode</a></li>
+                                <li><a id="plD" href="https://jstris.jezevec10.com/play/practice">Practice</a></li>
+                                <li><a href="https://jstris.jezevec10.com/play/bot">Bots</a></li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">Rulesets</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a id="plE" href="https://jstris.jezevec10.com/play/big">Big mode</a></li>
+                                        <li><a id="plF" href="https://jstris.jezevec10.com/play/pentomino">Pentomino</a></li>
+                                        <li><a id="plG" href="https://jstris.jezevec10.com/play/MPH">MPH</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Leaderboard <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class=""><a href="https://jstris.jezevec10.com/sprint">Sprint</a></li>
+                                <li class=""><a href="https://jstris.jezevec10.com/cheese">Cheese race</a></li>
+                                <li class=""><a href="https://jstris.jezevec10.com/survival">Survival</a></li>
+                                <li class="active"><a href="https://jstris.jezevec10.com/ultra">Ultra</a></li>
+                                <li class=""><a href="https://jstris.jezevec10.com/20TSD">20TSD</a></li>
+                                <li class=""><a href="https://jstris.jezevec10.com/PC-mode">PC Mode</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Maps <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="">
+                                    <a class="icnItem" href="https://jstris.jezevec10.com/maps">
+                                        <span><img class="i-map i-map-browse" loading="lazy" width="12" height="12" src="ultra1_files/browse.svg" alt=""></span>
+                                        <span>Browse</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="icnItem" href="https://jstris.jezevec10.com/maps/random">
+                                        <span><img class="i-map i-map-random" loading="lazy" width="12" height="12" src="ultra1_files/random.svg" alt=""></span>
+                                        <span>Random map</span>
+                                    </a>
+                                </li>
+                                                                    <li class="">
+                                        <a class="icnItem" href="https://jstris.jezevec10.com/u/dynam1c/maps">
+                                            <span><img class="i-map i-map-my" loading="lazy" width="12" height="12" src="ultra1_files/my.svg" alt=""></span>
+                                            <span>My maps</span>
+                                        </a>
+                                    </li>
+                                                                <li class="">
+                                    <a class="icnItem" href="https://jstris.jezevec10.com/maps/create">
+                                        <span><img class="i-map i-map-create" loading="lazy" width="12" height="12" src="ultra1_files/create.svg" alt=""></span>
+                                        <span>Map Designer</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="icnItem" href="https://jstris.jezevec10.com/maps/games">
+                                        <span><img class="i-map i-map-games" loading="lazy" width="12" height="12" src="ultra1_files/games.svg" alt=""></span>
+                                        <span>Latest games</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="icnItem" href="https://jstris.jezevec10.com/maps/leaderboard">
+                                        <span><img class="i-map i-map-leaderboard" loading="lazy" width="12" height="12" src="ultra1_files/leaderboard.svg" alt=""></span>
+                                        <span>Leaderboard</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                                                <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usermodes <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="">
+                                    <a class="icnItem" href="https://jstris.jezevec10.com/usermodes">
+                                        <span><img class="i-um i-um-browse" loading="lazy" width="12" height="12" src="ultra1_files/browse_002.svg" alt=""></span>
+                                        <span>Browse</span>
+                                    </a>
+                                </li>
+                                                                    <li class="">
+                                        <a class="icnItem" href="https://jstris.jezevec10.com/u/dynam1c/modes">
+                                            <span><img class="i-um i-um-my" loading="lazy" width="12" height="12" src="ultra1_files/my_002.svg" alt=""></span>
+                                            <span>My modes</span>
+                                        </a>
+                                    </li>
+                                                                <li class="">
+                                    <a class="icnItem" href="https://jstris.jezevec10.com/usermodes/guide">
+                                        <span><img class="i-um i-um-guide" loading="lazy" width="12" height="12" src="ultra1_files/guide.svg" alt=""></span>
+                                        <span>Guide</span>
+                                    </a>
+                                </li>
+                                                                <li class="">
+                                    <a class="icnItem" href="https://jstris.jezevec10.com/usermodes/create">
+                                        <span><img class="i-um i-um-create" loading="lazy" width="12" height="12" src="ultra1_files/create_002.svg" alt=""></span>
+                                        <span>Create</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                                                <li class="">
+                            <a href="https://jstris.jezevec10.com/about">About</a>
+                        </li>
+                        <li class="">
+                            <a href="https://jstris.jezevec10.com/donate">Support Us</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+        en <span class="caret"></span>
+    </a>
+
+    
+    <ul class="dropdown-menu" role="menu">
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=en" hreflang="en">en
+                            <span class="cinf">100%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=cs" hreflang="cs">cs
+                            <span class="cinf">100%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=da" hreflang="da">da
+                            <span class="cinf">77%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=de" hreflang="de">de
+                            <span class="cinf">93%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=el" hreflang="el">el
+                            <span class="cinf">98%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=es" hreflang="es">es
+                            <span class="cinf">98%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=fi" hreflang="fi">fi
+                            <span class="cinf">95%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=fr" hreflang="fr">fr
+                            <span class="cinf">99%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=he" hreflang="he">he
+                            <span class="cinf">95%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=hu" hreflang="hu">hu
+                            <span class="cinf">98%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=id" hreflang="id">id
+                            <span class="cinf">90%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=it" hreflang="it">it
+                            <span class="cinf">63%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=ja" hreflang="ja">ja
+                            <span class="cinf">100%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=ko" hreflang="ko">ko
+                            <span class="cinf">100%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=lt" hreflang="lt">lt
+                            <span class="cinf">67%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=nl" hreflang="nl">nl
+                            <span class="cinf">95%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=pl" hreflang="pl">pl
+                            <span class="cinf">100%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=pt" hreflang="pt">pt
+                            <span class="cinf">100%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=ru" hreflang="ru">ru
+                            <span class="cinf">100%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=sv" hreflang="sv">sv
+                            <span class="cinf">95%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=tr" hreflang="tr">tr
+                            <span class="cinf">95%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=uk" hreflang="uk">uk
+                            <span class="cinf">98%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=vi" hreflang="vi">vi
+                            <span class="cinf">100%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=zh" hreflang="zh">zh
+                            <span class="cinf">100%</span>
+                        </a>
+        </li>
+                <li>
+            <a href="https://jstris.jezevec10.com/ultra/my-times?display=4&amp;langSwitch=zh-tw" hreflang="zh-tw">zh-tw
+                            <span class="cinf">98%</span>
+                        </a>
+        </li>
+                <li>
+            <a target="_blank" href="https://github.com/jezevec10/jstris-multilang"><em>Update translation</em></a>
+        </li>
+    </ul>
+</li>
+                                                    <li class="dropdown">
+    <a href="#" class="dropdown-toggle umd-uname" data-toggle="dropdown" role="button" aria-expanded="false">
+        dynam1c
+                                        <span class="caret"></span>
+    </a>
+
+    <ul class="dropdown-menu" role="menu">
+        <li>
+            <a href="https://jstris.jezevec10.com/profile">Profile</a>
+        </li>
+        <li class="divider"></li>
+
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#" class="icnItem"><span><svg class="svg-inline--fa fa-w-16 i-st"><use href="/svg/fa.svg#fas-fa-chart-line"></use></svg></span><span>Stats</span></a>
+            <ul class="dropdown-menu u-submenu">
+                <li><a class="icnItem" href="https://jstris.jezevec10.com/u/dynam1c/stats"><span><img class="i-mp" loading="lazy" src="ultra1_files/improve.png"></span><span>My improvement</span></a></li>
+                <li><a class="icnItem" href="https://jstris.jezevec10.com/u/dynam1c/ranking"><span><img class="i-ra" loading="lazy" src="ultra1_files/ranking.png"></span><span>Ranking stats</span></a></li>
+                <li><a class="icnItem" href="https://jstris.jezevec10.com/matches/dynam1c"><span><svg class="svg-inline--fa fa-w-20 i-ro"><use href="/svg/fa.svg#fas-fa-robot"></use></svg></span><span>Bot matches</span></a></li>
+            </ul>
+        </li>
+
+        <li>
+                            <a class="icnItem" href="https://jstris.jezevec10.com/friends">
+                        <span><svg class="svg-inline--fa fa-w-20 i-fr"><use href="/svg/fa.svg#fas-fa-user-friends"></use></svg></span>
+            <span class="umd-fr">Friends                        </span>
+            </a>
+        </li>
+        <li>
+            <a class="icnItem" href="https://jstris.jezevec10.com/activity">
+            <span><svg class="svg-inline--fa fa-w-18 i-nt"><use href="/svg/fa.svg#fas-fa-inbox"></use></svg></span>
+            <span class="umd-activ">Activity  </span>
+            </a>
+        </li>
+        <li>
+            <a class="icnItem" href="https://jstris.jezevec10.com/favorites"><span><svg class="svg-inline--fa fa-w-16 i-hr"><use href="/svg/fa.svg#fas-fa-heart"></use></svg></span><span>Favorite replays</span></a>
+        </li>
+        <li>
+            <a class="icnItem" href="https://jstris.jezevec10.com/settings/supporter" style="color:#ffb700"><span><img class="i-su" src="ultra1_files/gstr.png" alt="Star"></span><span>Supporter</span></a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://jstris.jezevec10.com/settings">Settings</a>
+        </li>
+        <li>
+            <a href="https://jstris.jezevec10.com/logout" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                Logout            </a>
+
+            <form id="logout-form" action="https://jstris.jezevec10.com/logout" method="POST" style="display: none;">
+                <input type="hidden" name="_token" value="BdX9XFYC6flsSG4X2quJihRGWj06Badu40pQivH8">
+            </form>
+        </li>
+    </ul>
+</li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+    
+
+
+<div class="btn-group">
+    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        Default
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+                        <li class="sel-opt">
+                          <a href="https://jstris.jezevec10.com/ultra/my-times?rule=default">Default</a>
+                     </li>
+                        <li>
+                          <a href="https://jstris.jezevec10.com/ultra/my-times?rule=pentomino">Pentomino</a>
+                     </li>
+                        <li>
+                          <a href="https://jstris.jezevec10.com/ultra/my-times?rule=MPH">MPH</a>
+                     </li>
+           </ul>
+</div>
+
+<div class="btn-group">
+            <a href="https://jstris.jezevec10.com/ultra/my-times?lines=2+minutes" class="btn btn-default active">2 minutes</a>
+    </div>
+
+
+<div class="pull-right">
+            
+     <div class="btn-group">
+       <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  My times
+         <span class="caret"></span>
+       </a>
+       <ul class="dropdown-menu">
+                                 <li>
+                                                                        <a href="https://jstris.jezevec10.com/ultra">Best players</a>
+                                              </li>
+                                 <li>
+                                                                        <a href="https://jstris.jezevec10.com/ultra/best-games">Best games</a>
+                                              </li>
+                                 <li>
+                                                                        <a href="https://jstris.jezevec10.com/ultra/most-games">The most games</a>
+                                              </li>
+                                 <li>
+                                                                        <a href="https://jstris.jezevec10.com/ultra/latest-games">Latest games</a>
+                                              </li>
+                                 <li>
+                                                                        <a href="https://jstris.jezevec10.com/ultra/country">Country</a>
+                                              </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Continent</a>
+                            </li>
+                                 <li class="sel-opt">
+                                                                        <a href="https://jstris.jezevec10.com/ultra/my-times">My times</a>
+                                              </li>
+                                 <li>
+                                                                                                                  <a href="https://jstris.jezevec10.com/ultra?display=5" class="lb-select-user-trigger" data-lb-select-user="1" data-lb-user-select="1" data-lb-mode-param="display" data-lb-mode-value="5" data-lb-user-param="user">Select user</a>
+                                                                  </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Basic Stats</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Clear Types</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">T-Spins</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Perfect Clears</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Clear-Type Streaks</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Back-to-Back (B2B)</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Score Variants</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Restricted Game</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Efficiency (PPB)</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Efficiency No PC (PPB)</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">ST Stacking</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">LST Stacking</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Looping</a>
+                            </li>
+                                 <li class="disabled" style="opacity: 0.5; cursor: not-allowed;">
+                                  <a href="#" onclick="return false;" style="cursor: not-allowed;" title="Supporter-only option">Hunt Competition</a>
+                            </li>
+                 </ul>
+     </div>
+                    <div class="btn-group">
+       <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+         All time
+         <span class="caret"></span>
+       </a>
+       <ul class="dropdown-menu">
+                                 <li><a href="https://jstris.jezevec10.com/ultra/my-times?time=1">Today</a></li>
+                                 <li><a href="https://jstris.jezevec10.com/ultra/my-times?time=2">Last week</a></li>
+                                 <li><a href="https://jstris.jezevec10.com/ultra/my-times?time=3">Last month</a></li>
+                                 <li><a href="https://jstris.jezevec10.com/ultra/my-times?time=4">Last year</a></li>
+                                 <li class="sel-opt"><a href="https://jstris.jezevec10.com/ultra/my-times?time=0">All time</a></li>
+                 </ul>
+     </div>
+        
+    
+          
+     
+     </div>
+
+
+  
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+
+  
+<th>Score</th>
+
+
+
+      <th>Blocks</th>
+            <th>PPB</th>
+            <th>PPS</th>
+            <th>Finesse</th>
+            <th>Date&nbsp;&nbsp;<span class="plain-note">(UTC)</span></th>
+      <th>Replay</th>
+          </tr>
+  </thead>
+  <tbody id="lb-body">
+                            <tr data-record-id="93938277">
+              <td>
+                                   1 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>107,918</strong></td>
+                            <td>352</td>
+                              <td>306.59</td>
+                            <td>2.93</td>
+                            <td>35</td>
+                            <td data-tsu="1741711361">2025-03-11 16:42:41</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93938277" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93964630">
+              <td>
+                                   2 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>103,259</strong></td>
+                            <td>341</td>
+                              <td>302.81</td>
+                            <td>2.84</td>
+                            <td>35</td>
+                            <td data-tsu="1741785195">2025-03-12 13:13:15</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93964630" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="85122875">
+              <td>
+                                   3 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>101,334</strong></td>
+                            <td>348</td>
+                              <td>291.19</td>
+                            <td>2.9</td>
+                            <td>25</td>
+                            <td data-tsu="1718488639">2024-06-15 21:57:19</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/85122875" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93971178">
+              <td>
+                                   4 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>96,091</strong></td>
+                            <td>319</td>
+                              <td>301.23</td>
+                            <td>2.66</td>
+                            <td>42</td>
+                            <td data-tsu="1741798131">2025-03-12 16:48:51</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93971178" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="71064760">
+              <td>
+                                   5 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>94,833</strong></td>
+                            <td>323</td>
+                              <td>293.6</td>
+                            <td>2.69</td>
+                            <td>38</td>
+                            <td data-tsu="1686148345">2023-06-07 14:32:25</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/71064760" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="85122839">
+              <td>
+                                   6 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>94,304</strong></td>
+                            <td>322</td>
+                              <td>292.87</td>
+                            <td>2.68</td>
+                            <td>42</td>
+                            <td data-tsu="1718488513">2024-06-15 21:55:13</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/85122839" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="82349205">
+              <td>
+                                   7 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>93,397</strong></td>
+                            <td>332</td>
+                              <td>281.32</td>
+                            <td>2.77</td>
+                            <td>16</td>
+                            <td data-tsu="1712075440">2024-04-02 16:30:40</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/82349205" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="82349499">
+              <td>
+                                   8 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>91,828</strong></td>
+                            <td>327</td>
+                              <td>280.82</td>
+                            <td>2.73</td>
+                            <td>51</td>
+                            <td data-tsu="1712076008">2024-04-02 16:40:08</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/82349499" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="101366083">
+              <td>
+                                   9 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>90,946</strong></td>
+                            <td>296</td>
+                              <td>307.25</td>
+                            <td>2.47</td>
+                            <td>64</td>
+                            <td data-tsu="1764778357">2025-12-03 16:12:37</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/101366083" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="85147654">
+              <td>
+                                   10 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>90,635</strong></td>
+                            <td>299</td>
+                              <td>303.13</td>
+                            <td>2.49</td>
+                            <td>41</td>
+                            <td data-tsu="1718555554">2024-06-16 16:32:34</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/85147654" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93903444">
+              <td>
+                                   11 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>90,632</strong></td>
+                            <td>332</td>
+                              <td>272.99</td>
+                            <td>2.77</td>
+                            <td>43</td>
+                            <td data-tsu="1741620938">2025-03-10 15:35:38</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93903444" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93937394">
+              <td>
+                                   12 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>90,246</strong></td>
+                            <td>335</td>
+                              <td>269.39</td>
+                            <td>2.79</td>
+                            <td>54</td>
+                            <td data-tsu="1741709202">2025-03-11 16:06:42</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93937394" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92588088">
+              <td>
+                                   13 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>89,319</strong></td>
+                            <td>312</td>
+                              <td>286.28</td>
+                            <td>2.6</td>
+                            <td>25</td>
+                            <td data-tsu="1738021250">2025-01-27 23:40:50</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92588088" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92590214">
+              <td>
+                                   14 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>89,019</strong></td>
+                            <td>311</td>
+                              <td>286.23</td>
+                            <td>2.59</td>
+                            <td>24</td>
+                            <td data-tsu="1738026300">2025-01-28 01:05:00</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92590214" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92590614">
+              <td>
+                                   15 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>88,693</strong></td>
+                            <td>293</td>
+                              <td>302.71</td>
+                            <td>2.44</td>
+                            <td>56</td>
+                            <td data-tsu="1738027315">2025-01-28 01:21:55</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92590614" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93903386">
+              <td>
+                                   16 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>87,915</strong></td>
+                            <td>310</td>
+                              <td>283.6</td>
+                            <td>2.58</td>
+                            <td>52</td>
+                            <td data-tsu="1741620784">2025-03-10 15:33:04</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93903386" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92589683">
+              <td>
+                                   17 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>87,622</strong></td>
+                            <td>306</td>
+                              <td>286.35</td>
+                            <td>2.55</td>
+                            <td>39</td>
+                            <td data-tsu="1738025139">2025-01-28 00:45:39</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92589683" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="82349366">
+              <td>
+                                   18 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>87,131</strong></td>
+                            <td>324</td>
+                              <td>268.92</td>
+                            <td>2.7</td>
+                            <td>43</td>
+                            <td data-tsu="1712075745">2024-04-02 16:35:45</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/82349366" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="101366030">
+              <td>
+                                   19 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>87,016</strong></td>
+                            <td>306</td>
+                              <td>284.37</td>
+                            <td>2.55</td>
+                            <td>42</td>
+                            <td data-tsu="1764778173">2025-12-03 16:09:33</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/101366030" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92588593">
+              <td>
+                                   20 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>85,553</strong></td>
+                            <td>304</td>
+                              <td>281.42</td>
+                            <td>2.53</td>
+                            <td>29</td>
+                            <td data-tsu="1738022564">2025-01-28 00:02:44</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92588593" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="94011604">
+              <td>
+                                   21 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>84,917</strong></td>
+                            <td>284</td>
+                              <td>299</td>
+                            <td>2.37</td>
+                            <td>54</td>
+                            <td data-tsu="1741903072">2025-03-13 21:57:52</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/94011604" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92588524">
+              <td>
+                                   22 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>84,850</strong></td>
+                            <td>297</td>
+                              <td>285.69</td>
+                            <td>2.48</td>
+                            <td>32</td>
+                            <td data-tsu="1738022405">2025-01-28 00:00:05</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92588524" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92588245">
+              <td>
+                                   23 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>84,579</strong></td>
+                            <td>303</td>
+                              <td>279.14</td>
+                            <td>2.53</td>
+                            <td>43</td>
+                            <td data-tsu="1738021689">2025-01-27 23:48:09</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92588245" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="94093611">
+              <td>
+                                   24 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>84,196</strong></td>
+                            <td>295</td>
+                              <td>285.41</td>
+                            <td>2.46</td>
+                            <td>64</td>
+                            <td data-tsu="1742146464">2025-03-16 17:34:24</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/94093611" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92588306">
+              <td>
+                                   25 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>84,177</strong></td>
+                            <td>313</td>
+                              <td>268.94</td>
+                            <td>2.61</td>
+                            <td>42</td>
+                            <td data-tsu="1738021880">2025-01-27 23:51:20</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92588306" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93897760">
+              <td>
+                                   26 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>84,035</strong></td>
+                            <td>291</td>
+                              <td>288.78</td>
+                            <td>2.43</td>
+                            <td>58</td>
+                            <td data-tsu="1741606562">2025-03-10 11:36:02</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93897760" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="59235754">
+              <td>
+                                   27 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>83,265</strong></td>
+                            <td>278</td>
+                              <td>299.51</td>
+                            <td>2.32</td>
+                            <td>49</td>
+                            <td data-tsu="1662665630">2022-09-08 19:33:50</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/59235754" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="63771899">
+              <td>
+                                   28 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>83,130</strong></td>
+                            <td>277</td>
+                              <td>300.11</td>
+                            <td>2.31</td>
+                            <td>55</td>
+                            <td data-tsu="1671096374">2022-12-15 09:26:14</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/63771899" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="85147214">
+              <td>
+                                   29 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>82,832</strong></td>
+                            <td>312</td>
+                              <td>265.49</td>
+                            <td>2.6</td>
+                            <td>26</td>
+                            <td data-tsu="1718554524">2024-06-16 16:15:24</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/85147214" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92588723">
+              <td>
+                                   30 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>82,765</strong></td>
+                            <td>282</td>
+                              <td>293.49</td>
+                            <td>2.35</td>
+                            <td>36</td>
+                            <td data-tsu="1738022863">2025-01-28 00:07:43</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92588723" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93937478">
+              <td>
+                                   31 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>82,447</strong></td>
+                            <td>294</td>
+                              <td>280.43</td>
+                            <td>2.45</td>
+                            <td>64</td>
+                            <td data-tsu="1741709358">2025-03-11 16:09:18</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93937478" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92588162">
+              <td>
+                                   32 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>82,380</strong></td>
+                            <td>322</td>
+                              <td>255.84</td>
+                            <td>2.68</td>
+                            <td>27</td>
+                            <td data-tsu="1738021460">2025-01-27 23:44:20</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92588162" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="66083713">
+              <td>
+                                   33 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>82,105</strong></td>
+                            <td>285</td>
+                              <td>288.09</td>
+                            <td>2.38</td>
+                            <td>28</td>
+                            <td data-tsu="1675931605">2023-02-09 08:33:25</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/66083713" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="94011722">
+              <td>
+                                   34 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>81,678</strong></td>
+                            <td>301</td>
+                              <td>271.36</td>
+                            <td>2.51</td>
+                            <td>44</td>
+                            <td data-tsu="1741903338">2025-03-13 22:02:18</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/94011722" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92590326">
+              <td>
+                                   35 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>81,102</strong></td>
+                            <td>283</td>
+                              <td>286.58</td>
+                            <td>2.36</td>
+                            <td>51</td>
+                            <td data-tsu="1738026535">2025-01-28 01:08:55</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92590326" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93902529">
+              <td>
+                                   36 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>81,034</strong></td>
+                            <td>300</td>
+                              <td>270.11</td>
+                            <td>2.5</td>
+                            <td>27</td>
+                            <td data-tsu="1741619040">2025-03-10 15:04:00</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93902529" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="59235467">
+              <td>
+                                   37 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>80,951</strong></td>
+                            <td>286</td>
+                              <td>283.05</td>
+                            <td>2.38</td>
+                            <td>29</td>
+                            <td data-tsu="1662664985">2022-09-08 19:23:05</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/59235467" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92589449">
+              <td>
+                                   38 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>80,264</strong></td>
+                            <td>281</td>
+                              <td>285.64</td>
+                            <td>2.34</td>
+                            <td>39</td>
+                            <td data-tsu="1738024637">2025-01-28 00:37:17</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92589449" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92588011">
+              <td>
+                                   39 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>79,056</strong></td>
+                            <td>273</td>
+                              <td>289.58</td>
+                            <td>2.28</td>
+                            <td>66</td>
+                            <td data-tsu="1738021073">2025-01-27 23:37:53</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92588011" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="59969709">
+              <td>
+                                   40 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>78,516</strong></td>
+                            <td>302</td>
+                              <td>259.99</td>
+                            <td>2.52</td>
+                            <td>70</td>
+                            <td data-tsu="1664026647">2022-09-24 13:37:27</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/59969709" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="85147520">
+              <td>
+                                   41 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>77,966</strong></td>
+                            <td>272</td>
+                              <td>286.64</td>
+                            <td>2.27</td>
+                            <td>18</td>
+                            <td data-tsu="1718555217">2024-06-16 16:26:57</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/85147520" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="92589278">
+              <td>
+                                   42 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>77,823</strong></td>
+                            <td>288</td>
+                              <td>270.22</td>
+                            <td>2.4</td>
+                            <td>60</td>
+                            <td data-tsu="1738024310">2025-01-28 00:31:50</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/92589278" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="94093552">
+              <td>
+                                   43 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>75,789</strong></td>
+                            <td>283</td>
+                              <td>267.81</td>
+                            <td>2.36</td>
+                            <td>81</td>
+                            <td data-tsu="1742146279">2025-03-16 17:31:19</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/94093552" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="63637602">
+              <td>
+                                   44 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>75,705</strong></td>
+                            <td>268</td>
+                              <td>282.48</td>
+                            <td>2.23</td>
+                            <td>41</td>
+                            <td data-tsu="1670862655">2022-12-12 16:30:55</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/63637602" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="94044158">
+              <td>
+                                   45 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>75,412</strong></td>
+                            <td>303</td>
+                              <td>248.88</td>
+                            <td>2.53</td>
+                            <td>50</td>
+                            <td data-tsu="1741995441">2025-03-14 23:37:21</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/94044158" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58958584">
+              <td>
+                                   46 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>75,228</strong></td>
+                            <td>278</td>
+                              <td>270.6</td>
+                            <td>2.32</td>
+                            <td>84</td>
+                            <td data-tsu="1662123740">2022-09-02 13:02:20</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58958584" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="63637507">
+              <td>
+                                   47 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>75,156</strong></td>
+                            <td>298</td>
+                              <td>252.2</td>
+                            <td>2.48</td>
+                            <td>44</td>
+                            <td data-tsu="1670862481">2022-12-12 16:28:01</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/63637507" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57590043">
+              <td>
+                                   48 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>74,926</strong></td>
+                            <td>289</td>
+                              <td>259.26</td>
+                            <td>2.41</td>
+                            <td>62</td>
+                            <td data-tsu="1659397456">2022-08-01 23:44:16</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57590043" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93937339">
+              <td>
+                                   49 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>74,536</strong></td>
+                            <td>282</td>
+                              <td>264.31</td>
+                            <td>2.35</td>
+                            <td>75</td>
+                            <td data-tsu="1741709079">2025-03-11 16:04:39</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93937339" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="63637686">
+              <td>
+                                   50 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>73,844</strong></td>
+                            <td>270</td>
+                              <td>273.5</td>
+                            <td>2.25</td>
+                            <td>47</td>
+                            <td data-tsu="1670862801">2022-12-12 16:33:21</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/63637686" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="63771821">
+              <td>
+                                   51 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>73,298</strong></td>
+                            <td>275</td>
+                              <td>266.54</td>
+                            <td>2.29</td>
+                            <td>26</td>
+                            <td data-tsu="1671096183">2022-12-15 09:23:03</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/63771821" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="85122772">
+              <td>
+                                   52 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>72,825</strong></td>
+                            <td>289</td>
+                              <td>251.99</td>
+                            <td>2.41</td>
+                            <td>32</td>
+                            <td data-tsu="1718488265">2024-06-15 21:51:05</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/85122772" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="59235981">
+              <td>
+                                   53 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>72,499</strong></td>
+                            <td>268</td>
+                              <td>270.52</td>
+                            <td>2.23</td>
+                            <td>62</td>
+                            <td data-tsu="1662666056">2022-09-08 19:40:56</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/59235981" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="66083655">
+              <td>
+                                   54 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>71,865</strong></td>
+                            <td>286</td>
+                              <td>251.28</td>
+                            <td>2.38</td>
+                            <td>33</td>
+                            <td data-tsu="1675931384">2023-02-09 08:29:44</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/66083655" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="94012139">
+              <td>
+                                   55 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>71,156</strong></td>
+                            <td>244</td>
+                              <td>291.62</td>
+                            <td>2.03</td>
+                            <td>51</td>
+                            <td data-tsu="1741904415">2025-03-13 22:20:15</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/94012139" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58312904">
+              <td>
+                                   56 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>70,732</strong></td>
+                            <td>262</td>
+                              <td>269.97</td>
+                            <td>2.18</td>
+                            <td>68</td>
+                            <td data-tsu="1660840743">2022-08-18 16:39:03</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58312904" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57871041">
+              <td>
+                                   57 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>70,288</strong></td>
+                            <td>261</td>
+                              <td>269.3</td>
+                            <td>2.18</td>
+                            <td>66</td>
+                            <td data-tsu="1659973195">2022-08-08 15:39:55</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57871041" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="63637830">
+              <td>
+                                   58 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>70,281</strong></td>
+                            <td>292</td>
+                              <td>240.69</td>
+                            <td>2.43</td>
+                            <td>42</td>
+                            <td data-tsu="1670863009">2022-12-12 16:36:49</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/63637830" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57999608">
+              <td>
+                                   59 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>69,989</strong></td>
+                            <td>248</td>
+                              <td>282.21</td>
+                            <td>2.07</td>
+                            <td>48</td>
+                            <td data-tsu="1660223656">2022-08-11 13:14:16</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57999608" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58959005">
+              <td>
+                                   60 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>69,724</strong></td>
+                            <td>276</td>
+                              <td>252.62</td>
+                            <td>2.3</td>
+                            <td>84</td>
+                            <td data-tsu="1662124500">2022-09-02 13:15:00</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58959005" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="75523819">
+              <td>
+                                   61 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>69,484</strong></td>
+                            <td>281</td>
+                              <td>247.27</td>
+                            <td>2.34</td>
+                            <td>38</td>
+                            <td data-tsu="1696420469">2023-10-04 11:54:29</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/75523819" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57999498">
+              <td>
+                                   62 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>68,983</strong></td>
+                            <td>253</td>
+                              <td>272.66</td>
+                            <td>2.11</td>
+                            <td>59</td>
+                            <td data-tsu="1660223439">2022-08-11 13:10:39</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57999498" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="63637931">
+              <td>
+                                   63 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>68,764</strong></td>
+                            <td>275</td>
+                              <td>250.05</td>
+                            <td>2.29</td>
+                            <td>53</td>
+                            <td data-tsu="1670863150">2022-12-12 16:39:10</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/63637931" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="75523890">
+              <td>
+                                   64 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>68,386</strong></td>
+                            <td>289</td>
+                              <td>236.63</td>
+                            <td>2.41</td>
+                            <td>59</td>
+                            <td data-tsu="1696420606">2023-10-04 11:56:46</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/75523890" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58308010">
+              <td>
+                                   65 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>68,166</strong></td>
+                            <td>254</td>
+                              <td>268.37</td>
+                            <td>2.12</td>
+                            <td>58</td>
+                            <td data-tsu="1660832890">2022-08-18 14:28:10</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58308010" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="59236077">
+              <td>
+                                   66 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>67,639</strong></td>
+                            <td>267</td>
+                              <td>253.33</td>
+                            <td>2.23</td>
+                            <td>43</td>
+                            <td data-tsu="1662666218">2022-09-08 19:43:38</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/59236077" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58958859">
+              <td>
+                                   67 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>67,535</strong></td>
+                            <td>272</td>
+                              <td>248.29</td>
+                            <td>2.27</td>
+                            <td>71</td>
+                            <td data-tsu="1662124230">2022-09-02 13:10:30</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58958859" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58477836">
+              <td>
+                                   68 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>67,378</strong></td>
+                            <td>238</td>
+                              <td>283.1</td>
+                            <td>1.98</td>
+                            <td>69</td>
+                            <td data-tsu="1661175127">2022-08-22 13:32:07</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58477836" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="59235401">
+              <td>
+                                   69 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>66,786</strong></td>
+                            <td>273</td>
+                              <td>244.64</td>
+                            <td>2.28</td>
+                            <td>40</td>
+                            <td data-tsu="1662664850">2022-09-08 19:20:50</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/59235401" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58958680">
+              <td>
+                                   70 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>66,618</strong></td>
+                            <td>278</td>
+                              <td>239.63</td>
+                            <td>2.32</td>
+                            <td>64</td>
+                            <td data-tsu="1662123932">2022-09-02 13:05:32</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58958680" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93937278">
+              <td>
+                                   71 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>65,480</strong></td>
+                            <td>233</td>
+                              <td>281.03</td>
+                            <td>1.94</td>
+                            <td>35</td>
+                            <td data-tsu="1741708956">2025-03-11 16:02:36</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93937278" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58958401">
+              <td>
+                                   72 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>65,037</strong></td>
+                            <td>274</td>
+                              <td>237.36</td>
+                            <td>2.28</td>
+                            <td>55</td>
+                            <td data-tsu="1662123443">2022-09-02 12:57:23</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58958401" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57611020">
+              <td>
+                                   73 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>65,029</strong></td>
+                            <td>251</td>
+                              <td>259.08</td>
+                            <td>2.09</td>
+                            <td>92</td>
+                            <td data-tsu="1659440349">2022-08-02 11:39:09</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57611020" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="85122808">
+              <td>
+                                   74 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>63,942</strong></td>
+                            <td>272</td>
+                              <td>235.08</td>
+                            <td>2.27</td>
+                            <td>51</td>
+                            <td data-tsu="1718488390">2024-06-15 21:53:10</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/85122808" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58477973">
+              <td>
+                                   75 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>62,963</strong></td>
+                            <td>229</td>
+                              <td>274.95</td>
+                            <td>1.91</td>
+                            <td>73</td>
+                            <td data-tsu="1661175399">2022-08-22 13:36:39</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58477973" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58456194">
+              <td>
+                                   76 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>62,722</strong></td>
+                            <td>215</td>
+                              <td>291.73</td>
+                            <td>1.79</td>
+                            <td>36</td>
+                            <td data-tsu="1661131031">2022-08-22 01:17:11</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58456194" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="59235233">
+              <td>
+                                   77 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>62,339</strong></td>
+                            <td>263</td>
+                              <td>237.03</td>
+                            <td>2.19</td>
+                            <td>52</td>
+                            <td data-tsu="1662664497">2022-09-08 19:14:57</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/59235233" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58959888">
+              <td>
+                                   78 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>62,316</strong></td>
+                            <td>266</td>
+                              <td>234.27</td>
+                            <td>2.22</td>
+                            <td>82</td>
+                            <td data-tsu="1662126065">2022-09-02 13:41:05</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58959888" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="63638101">
+              <td>
+                                   79 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>61,911</strong></td>
+                            <td>251</td>
+                              <td>246.66</td>
+                            <td>2.09</td>
+                            <td>47</td>
+                            <td data-tsu="1670863370">2022-12-12 16:42:50</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/63638101" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58412007">
+              <td>
+                                   80 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>61,218</strong></td>
+                            <td>233</td>
+                              <td>262.74</td>
+                            <td>1.94</td>
+                            <td>35</td>
+                            <td data-tsu="1661038614">2022-08-20 23:36:54</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58412007" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58958767">
+              <td>
+                                   81 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>61,028</strong></td>
+                            <td>281</td>
+                              <td>217.18</td>
+                            <td>2.34</td>
+                            <td>64</td>
+                            <td data-tsu="1662124071">2022-09-02 13:07:51</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58958767" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58456523">
+              <td>
+                                   82 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>60,604</strong></td>
+                            <td>214</td>
+                              <td>283.2</td>
+                            <td>1.78</td>
+                            <td>47</td>
+                            <td data-tsu="1661131711">2022-08-22 01:28:31</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58456523" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57840917">
+              <td>
+                                   83 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>58,778</strong></td>
+                            <td>211</td>
+                              <td>278.57</td>
+                            <td>1.76</td>
+                            <td>108</td>
+                            <td data-tsu="1659912270">2022-08-07 22:44:30</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57840917" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57907966">
+              <td>
+                                   84 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>57,203</strong></td>
+                            <td>206</td>
+                              <td>277.68</td>
+                            <td>1.72</td>
+                            <td>63</td>
+                            <td data-tsu="1660046598">2022-08-09 12:03:18</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57907966" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58304000">
+              <td>
+                                   85 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>55,199</strong></td>
+                            <td>220</td>
+                              <td>250.9</td>
+                            <td>1.83</td>
+                            <td>48</td>
+                            <td data-tsu="1660825190">2022-08-18 12:19:50</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58304000" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57869097">
+              <td>
+                                   86 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>55,095</strong></td>
+                            <td>207</td>
+                              <td>266.16</td>
+                            <td>1.73</td>
+                            <td>56</td>
+                            <td data-tsu="1659969974">2022-08-08 14:46:14</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57869097" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57999384">
+              <td>
+                                   87 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>53,053</strong></td>
+                            <td>208</td>
+                              <td>255.06</td>
+                            <td>1.73</td>
+                            <td>52</td>
+                            <td data-tsu="1660223190">2022-08-11 13:06:30</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57999384" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57908044">
+              <td>
+                                   88 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>51,796</strong></td>
+                            <td>187</td>
+                              <td>276.98</td>
+                            <td>1.56</td>
+                            <td>67</td>
+                            <td data-tsu="1660046758">2022-08-09 12:05:58</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57908044" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="58040936">
+              <td>
+                                   89 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>46,078</strong></td>
+                            <td>161</td>
+                              <td>286.2</td>
+                            <td>1.34</td>
+                            <td>50</td>
+                            <td data-tsu="1660302801">2022-08-12 11:13:21</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/58040936" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="57907824">
+              <td>
+                                   90 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>44,594</strong></td>
+                            <td>159</td>
+                              <td>280.47</td>
+                            <td>1.33</td>
+                            <td>34</td>
+                            <td data-tsu="1660046356">2022-08-09 11:59:16</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/57907824" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="48381746">
+              <td>
+                                   91 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>39,354</strong></td>
+                            <td>215</td>
+                              <td>183.04</td>
+                            <td>1.79</td>
+                            <td>107</td>
+                            <td data-tsu="1643745934">2022-02-01 20:05:34</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/48381746" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="72759031">
+              <td>
+                                   92 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>39,005</strong></td>
+                            <td>220</td>
+                              <td>177.3</td>
+                            <td>1.83</td>
+                            <td>65</td>
+                            <td data-tsu="1690044208">2023-07-22 16:43:28</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/72759031" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="93525582">
+              <td>
+                                   93 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>33,629</strong></td>
+                            <td>116</td>
+                              <td>289.91</td>
+                            <td>0.97</td>
+                            <td>60</td>
+                            <td data-tsu="1740572952">2025-02-26 12:29:12</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/93525582" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="35870391">
+              <td>
+                                   94 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>26,256</strong></td>
+                            <td>170</td>
+                              <td>154.45</td>
+                            <td>1.42</td>
+                            <td>81</td>
+                            <td data-tsu="1623052111">2021-06-07 07:48:31</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/35870391" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="33509696">
+              <td>
+                                   95 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>24,383</strong></td>
+                            <td>175</td>
+                              <td>139.33</td>
+                            <td>1.46</td>
+                            <td>113</td>
+                            <td data-tsu="1619539976">2021-04-27 16:12:56</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/33509696" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+                    <tr data-record-id="33463798">
+              <td>
+                                   96 
+                              </td><td>
+                                                                                <a href="https://jstris.jezevec10.com/u/dynam1c" class="ut">
+                                                
+                        dynam1c</a>
+                                                  </td>
+              
+                                            
+              <td><strong>14,927</strong></td>
+                            <td>154</td>
+                              <td>96.93</td>
+                            <td>1.28</td>
+                            <td>127</td>
+                            <td data-tsu="1619470526">2021-04-26 20:55:26</td>
+              <td data-replay-val="3"><a class="lb-replay-btn" href="https://jstris.jezevec10.com/replay/33463798" target="_blank" aria-label="Play"><img src="ultra1_files/play.png" alt="Play"><span class="lb-replay-version">V3</span></a></td>
+            </tr>
+            </tbody>
+</table>
+<div id="lb-pagination">
+    <center></center>
+    </div>
+
+
+
+
+
+
+<script defer="defer" src="ultra1_files/leaderboard-loader.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.initLeaderboard) {
+        window.initLeaderboard({
+            lbUri: "https:\/\/jstris.jezevec10.com\/api\/lb\/ultra\/my-times?lines=2+minutes\u0026rule=default\u0026time=0\u0026user=dynam1c",
+            lbHmac: "1776099549-c4Qh_r4uHoMwPic_VGy5KqefLdqzexnGaE6hB8Zt04Y",
+            bodyId: 'lb-body',
+            paginationId: 'lb-pagination',
+            placeholderRows: 10,
+            scrollToMark: true,
+            userTimezone: "UTC",
+            isMod: false,
+            highlightId: 0        });
+    }
+});
+</script>
+    </div>
+
+
+</div><a href="#" style="visibility: hidden;" id="__TIMER_INJECTION_FLAG__{a8cf72f7-09b7-4cd4-9aaa-7a023bf09916}"></a></body></html>
